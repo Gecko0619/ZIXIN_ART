@@ -414,18 +414,9 @@ section {
         max-width: 300px;
     }
 
-<<<<<<< HEAD
     #time-display {
         font-size: 15vw;        /* Shrink the base size */
         letter-spacing: 2px;    /* Tighten the gaps between numbers */
         white-space: nowrap;    /* Prevent it from accidentally wrapping to a new line */
     }
 }
-=======
-   #time-display {
-        font-size: 11vw;        /* Shrink the base size */
-        letter-spacing: 2px;    /* Tighten the gaps between numbers */
-        white-space: nowrap;    /* Prevent it from accidentally wrapping to a new line */
-    }
-}
->>>>>>> 182e45327f300337855d659e909c0eb526e5c4fe
