@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The Pan Exhibition</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="timer-background">
+    <h1 id="time-display">00:00:00</h1>
+  </div>
+
+  <div class="content-wrapper">
+    <section class="hero">
+        <div class="hero-content">
+            <img src="/png/abstract-sculpture.png" alt="Featured Exhibit" class="hero-top-image">
+            <h2 class="subtitle">PREMIERE EXHIBITION</h2>
+            <h1 class="title">Angle:<br><span class="highlight">New Insight</span></h1>
+            <p class="description">An exclusive first look at modern form and classical influence.</p>
+            <div class="scroll-indicator">
+                <span class="arrow">↓</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+      <h2 class="section-title">The Gallery</h2>
+      <h3 class="venue-name">Warakuya Contemporary Arts</h3>
+      
+      <div class="event-details">
+        <p><strong>Opening Night:</strong> Feb 28, 2026</p>
+        <p><strong>Vernissage:</strong> 7:00 PM</p>
+        <p class="address">Sunway Giza Mall, No. 2, Jalan PJU 5/14, Kota Damansara</p>
+      </div>
+
+      <div class="location-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.782803365922!2d101.5888!3d3.1508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwMDknMDMuMCJOIDEwMcKwMzUnMTkuNyJF!5e0!3m2!1sen!2smy!4v1645545678901"
+          class="map-iframe" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </section>
+    
+    <section class="info-section">
+        <div class="info-text">
+            <h2 class="section-title">Attire</h2>
+            <h3 class="venue-name">Creative Formal</h3>
+            <p class="description">Express your personal style through elegant black-tie or contemporary avant-garde.</p>
+        </div>
+        <img src="/png/exhibition-hall.png" alt="Gallery Interior" class="side-image mobile-image">
+    </section>
+
+    <section class="info-section rsvp-section">
+      <h2 class="section-title">RSVP</h2>
+      <button id="btn" class="pink-btn">
+        <span>✨FIRE!!</span>
+      </button>
+    </section>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>
+    const btn = document.getElementById('btn');
+
+    function fire(ratio, opt) {
+        // Fire from the BOTTOM LEFT corner
+        confetti(Object.assign({}, opt, {
+            origin: { x: 0, y: 1 }, // x:0 is the far left, y:1 is the very bottom
+            angle: 60,              // Aims it up and to the right
+            particleCount: Math.floor(100 * ratio)
+        }));
+
+        // Fire from the BOTTOM RIGHT corner
+        confetti(Object.assign({}, opt, {
+            origin: { x: 1, y: 1 }, // x:1 is the far right, y:1 is the very bottom
+            angle: 120,             // Aims it up and to the left
+            particleCount: Math.floor(100 * ratio)
+        }));
+    }
+
+    btn.addEventListener('click', () => {
+        // We call fire() and it automatically triggers both the left and right cannons!
+        fire(.25, {
+            spread: 30, // Fixed capitalization
+            startVelocity: 60
+        });
+        fire(.2, { 
+            spread: 60 
+        });
+        fire(.35, {
+            spread: 100,
+            decay: .9,
+            scalar: 1
+        });
+        fire(.1, {
+            spread: 130,
+            startVelocity: 30,
+            decay: .92,
+            scalar: 1.2
+        });
+        fire(.2, {
+            spread: 120, // Fixed capitalization
+            startVelocity: 45
+        });
+    });
+</script>
+  <script src="script.js"></script>
+</body>
+</html>

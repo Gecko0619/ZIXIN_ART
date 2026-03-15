@@ -1,0 +1,416 @@
+/* =========================================
+   1. BASE STYLING & DARK TIMER BACKGROUND
+   ========================================= */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: transparent; 
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+#timer-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #2b0f19, #4a1c31, #6b2745); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1; 
+    opacity: 0; 
+    transform: scale(0.8);
+    transition: opacity 1.5s ease-in-out, transform 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#timer-background.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#time-display {
+    font-size: 15vw; 
+    color: rgba(255, 255, 255, 0.15); 
+    font-weight: 900;
+    letter-spacing: 5px;
+    user-select: none; 
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+section {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* =========================================
+   2. DARK HERO INVITATION SECTION
+   ========================================= */
+.hero {
+    color: white; 
+}
+
+.hero-content {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 80px 40px 60px 40px; 
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 800px;
+    margin: 60px auto 0 auto; 
+    color: white;
+    position: relative; 
+}
+
+.hero-top-image {
+    position: absolute;
+    width: 150px; 
+    top: -75px; 
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 6px;
+    color: #ff6b9e; 
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5); 
+}
+
+.title .highlight {
+    color: #ff6b9e; 
+    font-size: 5.5rem;
+}
+
+.description {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.85); 
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+.scroll-indicator {
+    margin-top: 30px;
+    opacity: 0.7;
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator p {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.scroll-indicator .arrow {
+    font-size: 1.5rem;
+    display: block;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* =========================================
+   3. GALLERY STYLE INFO SECTION (WHITE)
+   ========================================= */
+.info-section {
+    background-color: #ffffff; 
+    color: #333333; 
+    min-height: auto; 
+    margin: 120px auto; 
+    width: 90%;
+    max-width: 900px;
+    border-radius: 4px; 
+    padding: 60px; 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); 
+    border: 1px solid #f0f0f0; 
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+    text-align: left; 
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.info-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.split-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap; 
+}
+
+.location-text, .location-map, .info-text, .info-image-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Gallery Typography */
+.section-title {
+    color: #d81b60; 
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.venue-name {
+    font-size: 2.5rem;
+    margin: 0 0 25px 0;
+    line-height: 1.2;
+    color: #222; 
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+}
+
+.event-details p {
+    font-size: 1.15rem;
+    color: #555; 
+    margin: 12px 0;
+    line-height: 1.6;
+    border-bottom: 1px solid #eee; 
+    padding-bottom: 12px;
+}
+
+.event-details strong {
+    color: #222;
+    font-weight: 600;
+    margin-right: 10px;
+    font-family: Georgia, serif; 
+}
+
+/* =========================================
+   4. GALLERY STYLE MAP INTERACTION & IFRAME
+   ========================================= */
+.map-link {
+    display: block;
+    position: relative;
+    border-radius: 4px; 
+    overflow: hidden; 
+    border: 3px solid #f9f9f9;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+}
+
+.static-map {
+    width: 100%;
+    height: 300px; 
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease; 
+}
+
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(3px); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; 
+    transition: opacity 0.4s ease;
+}
+
+.map-overlay span {
+    color: #d81b60; 
+    background: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 12px 25px;
+    border: 2px solid #d81b60; 
+    border-radius: 30px;
+    transform: translateY(20px); 
+    transition: transform 0.4s ease;
+    box-shadow: 0 5px 15px rgba(216, 27, 96, 0.2); 
+}
+
+.map-link:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 20px 40px rgba(216, 27, 96, 0.15); 
+    border-color: #d81b60; 
+}
+
+.map-link:hover .static-map {
+    transform: scale(1.08); 
+}
+
+.map-link:hover .map-overlay {
+    opacity: 1; 
+}
+
+.map-link:hover .map-overlay span {
+    transform: translateY(0); 
+}
+
+.map-iframe {
+    width: 100%;
+    height: 350px; 
+    border: 3px solid #f9f9f9;
+    border-radius: 8px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); 
+    display: block;
+    transition: box-shadow 0.4s ease;
+}
+
+.map-iframe:hover {
+    box-shadow: 0 10px 25px rgba(216, 27, 96, 0.15); 
+    border-color: #d81b60; 
+}
+
+/* =========================================
+   5. SIDE IMAGES
+   ========================================= */
+.side-image {
+    width: 70%;
+    height: 70%;
+    min-height: 250px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); 
+    border: 3px solid #f9f9f9; 
+    display: block;
+}
+
+/* =========================================
+   6. BALLOON BUTTON & ANIMATIONS
+   ========================================= */
+.pink-btn {
+    background: #d81b60; 
+    color: #ffffff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px; 
+    cursor: pointer;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(216, 27, 96, 0.3); 
+    transition: all 0.3s ease;
+}
+
+.pink-btn:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 12px 25px rgba(216, 27, 96, 0.5); 
+    background: #ad144b; 
+}
+
+.balloon {
+    position: fixed;
+    bottom: -100px; 
+    width: 40px;
+    height: 55px;
+    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%; 
+    z-index: 9999; 
+    opacity: 0.9;
+    animation: floatUp linear forwards;
+    background-color: #ff6b9e;
+}
+
+.balloon::after {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    width: 1px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-120vh) rotate(15deg); }
+}
+
+/* =========================================
+   7. MOBILE RESPONSIVENESS (ENHANCED)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Typography adjustments for smaller screens */
+    .title { font-size: 2.5rem; }
+    .title .highlight { font-size: 3.2rem; }
+    .subtitle { font-size: 1rem; letter-spacing: 4px; }
+    .venue-name { font-size: 2rem; }
+    .description { font-size: 1.1rem; }
+    
+    /* Shrink the top illustration slightly */
+    .hero-top-image {
+        width: 120px;
+        top: -60px;
+    }
+
+    /* Reduce padding to save screen real estate */
+    .hero-content { 
+        padding: 60px 20px 40px 20px; 
+        margin: 50px 10px 0 10px; /* Slight side margins so it doesn't touch edges */
+    }
+    
+    .info-section { 
+        padding: 40px 20px; 
+        margin: 60px auto; 
+        width: 95%; /* Takes up more of the mobile screen */
+    }
+
+    /* Fix flexbox layout stacking */
+    .split-layout { 
+        gap: 30px; /* Reduces the massive empty space between stacked items */
+    }
+    
+    /* Forces elements to stack perfectly without overflowing */
+    .location-text, .location-map, .info-text, .info-image-container {
+        min-width: 100%; 
+    }
+
+    /* Makes side images look better when stacked */
+    .side-image {
+        width: 100%; 
+        height: auto; 
+        min-height: 200px;
+    }
+
+    /* Shrink maps slightly to prevent them from taking over the whole phone screen */
+    .static-map, .map-iframe {
+        height: 250px; 
+    }
+
+    /* Makes the button span nicely across a mobile screen */
+    .pink-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
