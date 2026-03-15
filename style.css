@@ -415,7 +415,7 @@ section {
     }
 
     #time-display {
-        font-size: 15vw;        /* Shrink the base size */
+        font-size: 11vw;        /* Shrink the base size */
         letter-spacing: 2px;    /* Tighten the gaps between numbers */
         white-space: nowrap;    /* Prevent it from accidentally wrapping to a new line */
     }
