@@ -11,6 +11,49 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Centers icons vertically */
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            color: #333;
+            font-size: 2.5rem;
+            /* Adjust icon size here */
+            transition: transform 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Specific styling for the XiaoHongShu image to match font-icons */
+        .xhs-icon {
+            width: 2.8rem;
+            /* Slightly larger width to match visual weight of font icons */
+            height: auto;
+            border-radius: 8px;
+            /* Optional: gives it a modern rounded look */
+            filter: grayscale(100%);
+            /* Optional: makes it black & white until hover */
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-5px);
+            color: #ff69b4;
+            /* Pink highlight on hover */
+        }
+
+        .social-icons a:hover .xhs-icon {
+            filter: grayscale(0%);
+            /* Returns color on hover */
+        }
     </style>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -64,15 +107,18 @@
         <section class="info-section social-links">
             <h2 class="section-title">Follow the Journey</h2>
             <div class="social-icons">
-                <a href="https://www.google.com/search?q=hi&rlz=1C1VDKB_enMY931MY931&oq=hi&gs_lcrp=EgZjaHJvbWUqBwgAEAAYjwIyBwgAEAAYjwIyBggBECMYJzIPCAIQABhDGLEDGIAEGIoFMgwIAxAAGEMYgAQYigUyDAgEEAAYQxiABBiKBTIGCAUQRRg9MgYIBhBFGD0yBggHEEUYPNIBBzczNmowajeoAgiwAgHxBUY9Rl35BfWO8QVGPUZd-QX1jg&sourceid=chrome&ie=UTF-8" target="_blank" aria-label="Instagram">
+                <a href="https://www.google.com/search?q=hi&rlz=1C1VDKB_enMY931MY931&oq=hi&gs_lcrp=EgZjaHJvbWUqBwgAEAAYjwIyBwgAEAAYjwIyBggBECMYJzIPCAIQABhDGLEDGIAEGIoFMgwIAxAAGEMYgAQYigUyDAgEEAAYQxiABBiKBTIGCAUQRRg9MgYIBhBFGD0yBggHEEUYPNIBBzczNmowajeoAgiwAgHxBUY9Rl35BfWO8QVGPUZd-QX1jg&sourceid=chrome&ie=UTF-8"
+                    target="_blank" aria-label="Instagram">
                     <img src="./png/ig.png" alt="XiaoHongShu" class="xhs-icon">
                 </a>
 
-                <a href="https://www.google.com/search?q=hi&rlz=1C1VDKB_enMY931MY931&oq=hi&gs_lcrp=EgZjaHJvbWUqBwgAEAAYjwIyBwgAEAAYjwIyBggBECMYJzIPCAIQABhDGLEDGIAEGIoFMgwIAxAAGEMYgAQYigUyDAgEEAAYQxiABBiKBTIGCAUQRRg9MgYIBhBFGD0yBggHEEUYPNIBBzczNmowajeoAgiwAgHxBUY9Rl35BfWO8QVGPUZd-QX1jg&sourceid=chrome&ie=UTF-8" target="_blank" aria-label="XiaoHongShu">
+                <a href="https://www.google.com/search?q=hi&rlz=1C1VDKB_enMY931MY931&oq=hi&gs_lcrp=EgZjaHJvbWUqBwgAEAAYjwIyBwgAEAAYjwIyBggBECMYJzIPCAIQABhDGLEDGIAEGIoFMgwIAxAAGEMYgAQYigUyDAgEEAAYQxiABBiKBTIGCAUQRRg9MgYIBhBFGD0yBggHEEUYPNIBBzczNmowajeoAgiwAgHxBUY9Rl35BfWO8QVGPUZd-QX1jg&sourceid=chrome&ie=UTF-8"
+                    target="_blank" aria-label="XiaoHongShu">
                     <img src="./png/xhs-logo.png" alt="XiaoHongShu" class="xhs-icon">
                 </a>
 
-                <a href="https://www.google.com/search?q=hi&rlz=1C1VDKB_enMY931MY931&oq=hi&gs_lcrp=EgZjaHJvbWUqBwgAEAAYjwIyBwgAEAAYjwIyBggBECMYJzIPCAIQABhDGLEDGIAEGIoFMgwIAxAAGEMYgAQYigUyDAgEEAAYQxiABBiKBTIGCAUQRRg9MgYIBhBFGD0yBggHEEUYPNIBBzczNmowajeoAgiwAgHxBUY9Rl35BfWO8QVGPUZd-QX1jg&sourceid=chrome&ie=UTF-8" target="_blank" aria-label="Website">
+                <a href="https://www.google.com/search?q=hi&rlz=1C1VDKB_enMY931MY931&oq=hi&gs_lcrp=EgZjaHJvbWUqBwgAEAAYjwIyBwgAEAAYjwIyBggBECMYJzIPCAIQABhDGLEDGIAEGIoFMgwIAxAAGEMYgAQYigUyDAgEEAAYQxiABBiKBTIGCAUQRRg9MgYIBhBFGD0yBggHEEUYPNIBBzczNmowajeoAgiwAgHxBUY9Rl35BfWO8QVGPUZd-QX1jg&sourceid=chrome&ie=UTF-8"
+                    target="_blank" aria-label="Website">
                     <i class="fas fa-globe"></i>
                 </a>
             </div>
