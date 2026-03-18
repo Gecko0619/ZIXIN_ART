@@ -415,8 +415,44 @@ section {
     }
 
     #time-display {
-        font-size: 15vw;        /* Shrink the base size */
+        font-size: 11vw;        /* Shrink the base size */
         letter-spacing: 2px;    /* Tighten the gaps between numbers */
         white-space: nowrap;    /* Prevent it from accidentally wrapping to a new line */
     }
+}
+
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centers icons vertically */
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.social-icons a {
+    color: #333;
+    font-size: 2.5rem; /* Adjust icon size here */
+    transition: transform 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Specific styling for the XiaoHongShu image to match font-icons */
+.xhs-icon {
+    width: 2.8rem; /* Slightly larger width to match visual weight of font icons */
+    height: auto;
+    border-radius: 8px; /* Optional: gives it a modern rounded look */
+    filter: grayscale(100%); /* Optional: makes it black & white until hover */
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+    color: #ff69b4; /* Pink highlight on hover */
+}
+
+.social-icons a:hover .xhs-icon {
+    filter: grayscale(0%); /* Returns color on hover */
 }

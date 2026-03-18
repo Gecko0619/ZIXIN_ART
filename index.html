@@ -1,114 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>The Pan Exhibition</title>
-  <style>
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-  </style>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The Pan Exhibition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
-  <div id="timer-background">
-    <h1 id="time-display">00:00:00</h1>
-  </div>
+    <div id="timer-background">
+        <h1 id="time-display">00:00:00</h1>
+    </div>
 
-  <div class="content-wrapper">
-    <section class="hero">
-        <div class="hero-content">
-            <h2 class="subtitle">PREMIERE EXHIBITION</h2>
-            <h1 class="title">You're<br><span class="highlight">Invited</span></h1>
-            <p class="description">An exclusive first look at modern form and classical influence.</p>
-            <div class="scroll-indicator">
-                <span class="arrow">↓</span>
+    <div class="content-wrapper">
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="subtitle">PREMIERE EXHIBITION</h2>
+                <h1 class="title">You're<br><span class="highlight">Invited</span></h1>
+                <p class="description">An exclusive first look at modern form and classical influence.</p>
+                <div class="scroll-indicator">
+                    <span class="arrow">↓</span>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="info-section">
-      <h2 class="section-title">The Gallery</h2>
-      <h3 class="venue-name">ZHAN Art | Space</h3>
-      
-      <div class="event-details">
-        <p><strong>Opening Launch:</strong> 05.04.2026 --- <b><i>2.00pm</i></b></p>
-        <p><strong>Exhibition Date:</strong> 01.04.2026 - 10.05.2026</p>
-        <p class="address">The School, Jaya One, Petaling Jaya</p>
-      </div>
+        <section class="info-section">
+            <h2 class="section-title">The Gallery</h2>
+            <h3 class="venue-name">ZHAN Art | Space</h3>
 
-      <div class="location-map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.913188913779!2d101.6348669!3d3.1176649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4937ec17339d%3A0xc1ac1fda3008b855!2sZHAN%20Art%20%7C%20Space!5e0!3m2!1sen!2smy!4v1773571448636!5m2!1sen!2smy"
-          class="map-iframe" allowfullscreen="" loading="lazy">
-        </iframe>
-      </div>
-    </section>
-    
-    <section class="info-section">
-        <div class="info-text">
-            <h2 class="section-title">Alert</h2>
-            <h3 class="venue-name">Invitation Card</h3>
-            <img src="/png/Invitation Card.png" alt="Gallery Interior" class="side-image mobile-image"><br>
+            <div class="event-details">
+                <p><strong>Opening Launch:</strong> 05.04.2026 --- <b><i>2.00pm</i></b></p>
+                <p><strong>Exhibition Date:</strong> 01.04.2026 - 10.05.2026</p>
+                <p class="address">The School, Jaya One, Petaling Jaya</p>
+            </div>
 
-        </div>
-        <div class="info-text">
-            <button id="btn" class="pink-btn">
-                <span>✨FIRE!!</span>
-            </button>
-        </div>
-    </section>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-<script>
-    const btn = document.getElementById('btn');
+            <div class="location-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.913188913779!2d101.6348669!3d3.1176649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4937ec17339d%3A0xc1ac1fda3008b855!2sZHAN%20Art%20%7C%20Space!5e0!3m2!1sen!2smy!4v1773571448636!5m2!1sen!2smy"
+                    class="map-iframe" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </section>
 
-    function fire(ratio, opt) {
-        // Fire from the BOTTOM LEFT corner
-        confetti(Object.assign({}, opt, {
-            origin: { x: 0, y: 1 }, // x:0 is the far left, y:1 is the very bottom
-            angle: 60,              // Aims it up and to the right
-            particleCount: Math.floor(100 * ratio)
-        }));
+        <section class="info-section">
+            <h2 class="venue-name">Invitation Card</h3>
+                <img src="/png/Invitation Card.png" alt="Gallery Interior" class="side-image mobile-image"><br>
 
-        // Fire from the BOTTOM RIGHT corner
-        confetti(Object.assign({}, opt, {
-            origin: { x: 1, y: 1 }, // x:1 is the far right, y:1 is the very bottom
-            angle: 120,             // Aims it up and to the left
-            particleCount: Math.floor(100 * ratio)
-        }));
-    }
+                <button id="btn" class="pink-btn">
+                    <span>✨FIRE!!</span>
+                </button>
+        </section>
 
-    btn.addEventListener('click', () => {
-        // We call fire() and it automatically triggers both the left and right cannons!
-        fire(.25, {
-            spread: 30, // Fixed capitalization
-            startVelocity: 60
+        <section class="info-section social-links">
+            <h2 class="section-title">Follow the Journey</h2>
+            <div class="social-icons">
+                <a href="YOUR_INSTAGRAM_LINK" target="_blank" aria-label="Instagram">
+                    <img src="png/ig.png" alt="XiaoHongShu" class="xhs-icon">
+                </a>
+
+                <a href="YOUR_XHS_LINK" target="_blank" aria-label="XiaoHongShu">
+                    <img src="png/xhs-logo.png" alt="XiaoHongShu" class="xhs-icon">
+                </a>
+
+                <a href="YOUR_WEBSITE_LINK" target="_blank" aria-label="Website">
+                    <i class="fas fa-globe"></i>
+                </a>
+            </div>
+        </section>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        const btn = document.getElementById('btn');
+
+        function fire(ratio, opt) {
+            // Fire from the BOTTOM LEFT corner
+            confetti(Object.assign({}, opt, {
+                origin: { x: 0, y: 1 }, // x:0 is the far left, y:1 is the very bottom
+                angle: 60,              // Aims it up and to the right
+                particleCount: Math.floor(100 * ratio)
+            }));
+
+            // Fire from the BOTTOM RIGHT corner
+            confetti(Object.assign({}, opt, {
+                origin: { x: 1, y: 1 }, // x:1 is the far right, y:1 is the very bottom
+                angle: 120,             // Aims it up and to the left
+                particleCount: Math.floor(100 * ratio)
+            }));
+        }
+
+        btn.addEventListener('click', () => {
+            // We call fire() and it automatically triggers both the left and right cannons!
+            fire(.25, {
+                spread: 30, // Fixed capitalization
+                startVelocity: 60
+            });
+            fire(.2, {
+                spread: 60
+            });
+            fire(.35, {
+                spread: 100,
+                decay: .9,
+                scalar: 1
+            });
+            fire(.1, {
+                spread: 130,
+                startVelocity: 30,
+                decay: .92,
+                scalar: 1.2
+            });
+            fire(.2, {
+                spread: 120, // Fixed capitalization
+                startVelocity: 45
+            });
         });
-        fire(.2, { 
-            spread: 60 
-        });
-        fire(.35, {
-            spread: 100,
-            decay: .9,
-            scalar: 1
-        });
-        fire(.1, {
-            spread: 130,
-            startVelocity: 30,
-            decay: .92,
-            scalar: 1.2
-        });
-        fire(.2, {
-            spread: 120, // Fixed capitalization
-            startVelocity: 45
-        });
-    });
-</script>
-  <script src="script.js"></script>
+    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>
